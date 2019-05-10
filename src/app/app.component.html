@@ -1,0 +1,21 @@
+<!-- <ul>
+	<li><b>S</b>hared</li>
+	<li><b>H</b>ydrated</li>
+	<li><b>A</b>vailable</li>
+	<li><b>R</b>etrieved</li>
+	<li><b>I</b>mpacted</li>
+</ul> -->
+
+<!-- 
+  Shared: Shared state accessed by many components and services.
+  Hydrated: State that is persisted and hydrated from storage.
+  Available: State that needs to be available when re-entering routes.
+  Retrieved: State that needs to be retrieved with a side effect.
+  Impacted: State that is impacted by actions from other sources.
+ -->
+
+
+<!-- <ng-container *ngIf="_pf.personDataLoaded$ | async"> -->
+  <ng-container>
+   <app-persons [persons]="_pf.persons$ | async"></app-persons>
+</ng-container>

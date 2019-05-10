@@ -1,0 +1,8 @@
+<div>
+  <span><strong>{{selectedPerson.name.first}} {{selectedPerson.name.last}}</strong></span>
+  <ul>
+  <ng-container *ngFor="let friend of selectedPerson.friends">
+    <li>{{friend.name}}</li>
+  </ng-container>
+  </ul>
+</div>
