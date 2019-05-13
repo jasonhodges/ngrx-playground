@@ -10,8 +10,4 @@ export namespace PersonSelectors {
 
   export const personDataLoaded = (state: PersonState.IState) => state.persons.personDataLoaded || null;
 
-  // export const selectPerson = (state: PersonState.IState) => createSelector(
-  //   (state, props) => state.persons.persons.name.first[props.name]
-  // );
-
 }
