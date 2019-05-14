@@ -17,15 +17,20 @@ export namespace PersonActions {
   )
 
   export const selectActivity = createAction(
-    '[Person] select activity',
-    props<{ activity: string }> ()
+    `[Person] select activity`,
+    props<{ activity: string }>()
+  )
+
+  export const clearActivity = createAction(
+    '[Person] clear activity'
   )
 
   const all = union({
     loadPersonData,
     personDataLoadedSuccess,
     selectPerson,
-    selectActivity
+    selectActivity,
+    clearActivity
   });
   export type PersonActionsUnion = typeof all;
 }

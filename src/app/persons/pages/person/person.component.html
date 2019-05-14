@@ -1,5 +1,5 @@
 <div>
-	<span><strong>{{selectedPerson.firstName}} {{selectedPerson.lastName}}</strong> {{pf.activitySelected$ | async}}</span>
+	<span (click)="pf.clearActivity()"><strong>{{selectedPerson.firstName}} {{selectedPerson.lastName}}</strong></span>
   <ul>
     <ng-container *ngFor="let popular of selectedPerson.popularActivities">
       <li>
@@ -9,7 +9,6 @@
   </ul>
   <ul>
   <ng-container *ngFor="let friend of (pf.activitySelected$ | async) ? (pf.friendsSameActivities$ | async) : selectedPerson.friends">
-    <!-- <ng-container *ngFor="let friend of pf.friendsSameActivities$ | async"> -->
     <li>{{friend.name}}</li>
     <ul>
     <ng-container *ngFor="let popular of friend.popularActivities">
@@ -18,7 +17,4 @@
   </ul>
   </ng-container>
   </ul>
-  <ng-container *ngFor="let friend of (pf.friendsSameActivities$ | async)">
-    <span>{{friend.name}}</span>
-  </ng-container>
 </div>

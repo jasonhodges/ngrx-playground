@@ -32,6 +32,18 @@ export namespace PersonReducer {
          
         }
       }
+
+      case PersonActions.clearActivity.type: {
+        return {
+          ...state,
+          selectedPerson: {
+            ...state.selectedPerson,
+            activityToDo: null,
+            activitySelected: false
+          }
+         
+        }
+      }
       default: {
         return state;
       }

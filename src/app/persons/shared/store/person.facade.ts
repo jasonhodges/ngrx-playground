@@ -10,14 +10,6 @@ import { PersonActions } from './person.actions';
 export class PersonFacade {
   constructor(private store: Store<PersonState.IState>) { }
 
-  loadPersonData() {
-    this.store.dispatch(PersonActions.loadPersonData())
-  }
-
-  selectActivity(a: string) {
-    this.store.dispatch(PersonActions.selectActivity({ activity: a }));
-  }
-
   selectedPerson$ = this.store.pipe(select(PersonSelectors.selectedPerson));
 
   personDataLoaded$ = this.store.pipe(select(PersonSelectors.personDataLoaded));
@@ -27,6 +19,18 @@ export class PersonFacade {
   activitySelected$ = this.store.pipe(select(PersonSelectors.activitySelected));
 
   friendsSameActivities$ = this.store.pipe(select(PersonSelectors.getFriendsSameActivity))
+
+  loadPersonData() {
+    this.store.dispatch(PersonActions.loadPersonData())
+  }
+
+  selectActivity(a: string) {
+    this.store.dispatch(PersonActions.selectActivity({ activity: a }));
+  }
+
+  clearActivity() {
+    this.store.dispatch(PersonActions.clearActivity());
+  }
 
   selectPerson(name: string) {
     this.store.dispatch(PersonActions.selectPerson({ name: name }))

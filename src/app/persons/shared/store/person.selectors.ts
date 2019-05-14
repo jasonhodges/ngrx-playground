@@ -15,26 +15,6 @@ export namespace PersonSelectors {
   (sp) => sp.activitySelected
   );
 
-  // export const getFriendsSameActivity = createSelector(
-  //   selectedPerson,
-  //   (sp) => {
-  //     console.log(sp);
-  //     let friends = [];
-  //     if (sp) {
-  //       sp.friends.forEach(f => {
-  //         let added = false;
-  //         sp.popularActivities.filter(a => f.popularActivities.map(a2 => a2.activity).includes(a.activity)).map(a => {
-  //           !added ? friends.push(f) : null;
-  //           added = true;
-  //           return;
-  //         })
-  //       })
-  //     }
-  //     console.log('friends: ', friends)
-  //     return friends;
-  //   }
-  // )
-
   export const getFriendsSameActivity = createSelector(
     selectedPerson,
     activitySelected,
@@ -48,12 +28,8 @@ export namespace PersonSelectors {
             console.log(a.activity)
             a.activity === sp.activityToDo ? friends.push(f) : null
           })
-          // .includes(sp.activityToDo).map(a => {
-          //   !added ? friends.push(f) : null;
-          //   added = true;
             return;
           })
-        // })
       }
       console.log('friends: ', friends)
       return friends;
