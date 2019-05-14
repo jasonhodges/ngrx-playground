@@ -21,6 +21,17 @@ export namespace PersonReducer {
         }
       }
 
+      case PersonActions.selectActivity.type: {
+        return {
+          ...state,
+          selectedPerson: {
+            ...state.selectedPerson,
+            activityToDo: action.activity,
+            activitySelected: true
+          }
+         
+        }
+      }
       default: {
         return state;
       }
@@ -30,7 +41,7 @@ export namespace PersonReducer {
   export function mapPerson(state: PersonState.IState, name: string) {
     console.log(state);
     return state.persons.find((p) => {
-      return p.name.first === name
+      return p.firstName === name
     })
   }
 }

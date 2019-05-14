@@ -16,12 +16,16 @@ export namespace PersonActions {
     props<{ name: string }>()
   )
 
-
+  export const selectActivity = createAction(
+    '[Person] select activity',
+    props<{ activity: string }> ()
+  )
 
   const all = union({
     loadPersonData,
     personDataLoadedSuccess,
-    selectPerson
+    selectPerson,
+    selectActivity
   });
   export type PersonActionsUnion = typeof all;
 }

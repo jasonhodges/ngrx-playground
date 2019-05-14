@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { PersonFacade } from '../../shared/store';
 @Component({
   selector: 'app-person',
   templateUrl: './person.component.html',
@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PersonComponent implements OnInit {
   @Input() selectedPerson: string;
-  constructor() { }
+  constructor(public pf: PersonFacade) { }
 
   ngOnInit() {
   }

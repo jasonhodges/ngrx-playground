@@ -1,34 +1,35 @@
-export namespace PersonModel {
 
-  export interface Name {
-    first: string;
-    last: string;
-  }
 
-  export interface Outdoor {
-    offroading: boolean;
-    biking: boolean;
-    snowboarding: boolean;
-    hiking: boolean;
-  }
-
-  export interface Activities {
-    outdoor: Outdoor;
-  }
-
-  export interface Friend {
-    id: number;
-    name: string;
-    activities: Activities;
-  }
-
-  export interface Person {
-    _id: string;
-    index: number;
-    age: number;
-    name: Name;
-    activities: Activities;
-    friends: Friend[];
-  }
-
+export class Friend {
+  constructor(
+    public name: string,
+    public popularActivities: Activity[]
+  ) { }
 }
+
+export class Person {
+  constructor(
+    public firstName: string,
+    public lastName: string,
+    public friends: Friend[],
+    public popularActivities: Activity[],
+    public activityToDo: string,
+    public activitySelected: boolean
+  ) { }
+}
+
+export interface Person {
+  firstName: string;
+  lastName: string
+  popularActivities: Activity[];
+  friends: Friend[];
+  activityToDo: string;
+  activitySelected: boolean;
+}
+
+export class Activity {
+  constructor(
+    public activity: string
+  ) { }
+}
+

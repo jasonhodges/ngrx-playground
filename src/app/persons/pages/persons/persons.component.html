@@ -1,7 +1,8 @@
 <ng-container *ngFor="let person of persons">
-	<button (click)="_pf.selectPerson(person.name.first)">
-		<span>{{person.name.first}} {{person.name.last}}</span>
+	<button (click)="_pf.selectPerson(person.firstName)">
+		<span>{{person.firstName}} {{person.lastName}}</span>
 </button>
 <br>
 </ng-container>
+<hr>
 <app-person *ngIf="selectedPerson$ | async" [selectedPerson]="selectedPerson$ | async"></app-person>

@@ -1,72 +1,41 @@
 import { Injectable } from '@angular/core';
+import { Person, Friend, Activity } from './store/person.model';
 
 @Injectable({ providedIn: 'root' })
 export class PersonDataMapper {
+  Person = Person;
   persons: Person[] = [];
   friends: Friend[] = [];
 
 
-  getHighestFriendActivity(data: any) {
-    console.log(`data: ${JSON.stringify(data)}`);
-    console.log(`friends: ${JSON.stringify(data[0].friends)}`)
-
+  getHighestFriendActivity(data: any): Person[] {
     data.map((person) => {
-      console.log(person)
-      
       this.persons.push(new Person(
         person.name.first,
         person.name.last,
-        this.getFriendName(person.friends),
-        this.getPopularActivity(person, person.friends)
+        this.getFriends(person.friends),
+        this.getPopularActivities(person)
       ))
-    })
-    console.log('persons: ', this.persons);
-    data[0].friends.forEach((friend) => {
-      console.log(friend)
-      this.friends.push(new Friend(friend.name));
-    })
-    return this.friends;
+    });
+    return this.persons;
   }
 
-  getFriendName(d) {
-    let friendNames: [] = [];
+  getFriends(d) {
+    let friends: Friend[] = [];
     d.forEach((f) => {
-      friendNames.push(new Friend(f.name))
+      friends.push(new Friend(f.name, this.getPopularActivities(f)))
     })
-    return friendNames;
+    return friends;
   }
 
-  getPopularActivity(a, f) {
-    console.log(`person activities: `, a.activities)
+  getPopularActivities(a) {
     let personActivityCategories = Object.keys(a.activities);
     let personActivities = a.activities[personActivityCategories[0]];
-    let personPopularActivities: [] = [];
+    let personPopularActivities: Activity[] = [];
     Object.keys(personActivities).forEach(act => {
-      console.log('act', act)
-      console.log(personActivities[act])
-      personActivities[act] === true ? personPopularActivities.push(act) : '';
+      personActivities[act] === true ? personPopularActivities.push({ activity: act }) : '';
     })
-
-
-    console.log(`personActivityCategories: `, personActivityCategories)
-    console.log('personActivities: ', personActivities);
-    console.log('personPopularActivities: ', personPopularActivities);
-
-    console.log('friends', f);
+    return personPopularActivities;
   }
 }
 
-export class Friend {
-  constructor(
-    public name: string
-  ) { }
-}
-
-export class Person {
-  constructor(
-    public firstName: string,
-    public lastName: string,
-    public friends: Friend[],
-    public popularActivity: string
-  ) { }
-}

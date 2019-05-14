@@ -1,15 +1,15 @@
 import { PersonModel } from './person.model';
 
 export namespace PersonState {
-  interface IState {
+  export interface IState {
     persons: PersonModel.Person[];
-    selectedPerson: string;
-    personDataLoaded: boolean
+    selectedPerson: PersonModel.Person;
+    personDataLoaded: boolean;
   }
 
-  const initialState: IState = {
+  export const initialState: IState = {
     persons: [],
-    selectedPerson: '',
-    personDataLoaded: false
+    selectedPerson: null,
+    personDataLoaded: false,
   }
 }
