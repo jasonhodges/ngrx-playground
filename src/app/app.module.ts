@@ -8,21 +8,23 @@ import { AppComponent } from './app.component';
 import { PersonsModule } from './persons/persons.module';
 import { PersonReducer } from './persons/shared/store';
 import { EffectsModule } from '@ngrx/effects';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    PersonsModule,
-    StoreModule.forRoot({ persons: PersonReducer.reducer }),
+    StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
       name: 'NgRx Playground',
       maxAge: 25,
     }),
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([]),
+    AppRoutingModule
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+// StoreModule.forRoot({ persons: PersonReducer.reducer }),

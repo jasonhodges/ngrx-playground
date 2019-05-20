@@ -1,40 +1,38 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { PersonState } from './person.state';
+import { PersonState } from './index';
 
 export namespace PersonSelectors {
-  export const getPersonState = createFeatureSelector<PersonState.IState>('persons')
+  export const getPersonState = createFeatureSelector<PersonState.IState>('personState')
 
-  export const getPersons = (state: PersonState.IState) => state.persons ? state.persons.persons : null
+  export const getPersons = (state: PersonState.IState) => state.personState.persons || null
 
-  export const selectedPerson = (state: PersonState.IState) => state ? state.persons.selectedPerson : '';
+  export const selectedPerson = (state: PersonState.IState) => state.personState.selectedPerson || '';
 
-  export const personDataLoaded = (state: PersonState.IState) => state.persons.personDataLoaded || null;
+  export const personDataLoaded = (state: PersonState.IState) => state.personState.personDataLoaded || null;
 
   export const activitySelected = createSelector(
-  selectedPerson,
-  (sp) => sp.activitySelected
+    selectedPerson,
+    (sp) => sp.activitySelected
   );
 
   export const getFriendsSameActivity = createSelector(
     selectedPerson,
     activitySelected,
     (sp, as) => {
-      console.log(sp);
+      // console.log(sp);
       let friends = [];
       if (as) {
         sp.friends.forEach(f => {
           let added = false;
           f.popularActivities.map(a => {
-            console.log(a.activity)
+            // console.log(a.activity)
             a.activity === sp.activityToDo ? friends.push(f) : null
           })
-            return;
-          })
+          return;
+        })
       }
-      console.log('friends: ', friends)
+      // console.log('friends: ', friends)
       return friends;
     }
   )
 }
-
-// arr1.filter(e => arr2.map(e2 => e2.id).includes(e.id)).map(e => return (<div>Match</div>));

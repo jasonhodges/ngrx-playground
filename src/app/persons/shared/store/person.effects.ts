@@ -14,6 +14,7 @@ export class PersonEffects {
       .loadPersonData()
       .pipe(
         map((response) => this.dataMapper.getHighestFriendActivity(response)),
+        // map((persons) => PersonActions.personDataLoadedSuccess({persons}))
         map((persons) => PersonActions.personDataLoadedSuccess({persons: persons}))
       )
     )

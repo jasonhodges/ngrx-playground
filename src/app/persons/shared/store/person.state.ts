@@ -1,6 +1,6 @@
 import { PersonModel } from './person.model';
 
-export namespace PersonState {
+// export namespace PersonState {
   export interface IState {
     persons: PersonModel.Person[];
     selectedPerson: PersonModel.Person;
@@ -12,4 +12,4 @@ export namespace PersonState {
     selectedPerson: null,
     personDataLoaded: false,
   }
-}
+// }

@@ -1,4 +1,4 @@
-import { PersonState } from './person.state';
+import { PersonState } from './index';
 import { PersonActions } from './person.actions';
 
 export namespace PersonReducer {
@@ -39,7 +39,7 @@ export namespace PersonReducer {
           selectedPerson: {
             ...state.selectedPerson,
             activityToDo: null,
-            activitySelected: false
+            activitySelected: true
           }
          
         }
