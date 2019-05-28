@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { map, mergeMap } from 'rxjs/operators';
-import { EMPTY } from 'rxjs';
+import { EMPTY, fromEvent } from 'rxjs';
 import { PersonService } from '../person.service';
 import { PersonActions} from './person.actions';
 import { PersonDataMapper} from '../person.data-mapper';
@@ -19,6 +19,10 @@ export class PersonEffects {
       )
     )
   );
+
+  @Effect({ dispatch: false })
+  personClick$ = fromEvent(document, 'click').pipe(
+    map(() => {console.log('clicked')}))
 
   constructor(
     private actions$: Actions,

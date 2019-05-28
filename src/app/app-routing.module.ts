@@ -4,7 +4,8 @@ import {Routes, RouterModule} from '@angular/router';
 const appRoutes: Routes = [
   {
     path: '',
-    loadChildren: './persons/persons.module#PersonModule'
+    redirectTo: '/persons',
+    pathMatch: 'full'
   }
 ]
 @NgModule({

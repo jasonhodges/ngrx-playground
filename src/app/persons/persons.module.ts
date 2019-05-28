@@ -16,6 +16,6 @@ import { PersonsRoutingModule } from './persons-routing.module';
     PersonsRoutingModule
   ],
   declarations: [PersonsComponent, PersonComponent],
-  exports: [PersonsComponent]
+  exports: [PersonComponent]
 })
 export class PersonsModule { }

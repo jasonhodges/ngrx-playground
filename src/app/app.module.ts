@@ -9,6 +9,7 @@ import { PersonsModule } from './persons/persons.module';
 import { PersonReducer } from './persons/shared/store';
 import { EffectsModule } from '@ngrx/effects';
 import { AppRoutingModule } from './app-routing.module';
+import { EventsModule } from './events/events.module';
 
 @NgModule({
   imports: [
@@ -21,6 +22,8 @@ import { AppRoutingModule } from './app-routing.module';
       maxAge: 25,
     }),
     EffectsModule.forRoot([]),
+    PersonsModule,
+    EventsModule,
     AppRoutingModule
   ],
   declarations: [AppComponent],
