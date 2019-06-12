@@ -5,6 +5,7 @@ import { EMPTY, fromEvent } from 'rxjs';
 import { PersonService } from '../person.service';
 import { PersonActions} from './person.actions';
 import { PersonDataMapper} from '../person.data-mapper';
+
 @Injectable()
 export class PersonEffects {
   @Effect()
@@ -13,8 +14,7 @@ export class PersonEffects {
     mergeMap(() => this._ps
       .loadPersonData()
       .pipe(
-        map((response) => this.dataMapper.getHighestFriendActivity(response)),
-        // map((persons) => PersonActions.personDataLoadedSuccess({persons}))
+        map((response) => this.dataMapper.buildPerson(response)),
         map((persons) => PersonActions.personDataLoadedSuccess({persons: persons}))
       )
     )
