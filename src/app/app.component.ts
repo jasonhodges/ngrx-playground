@@ -1,8 +1,5 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
-import { PersonState, PersonModel, PersonSelectors, PersonFacade } from './persons/shared/store';
-import { Observable } from 'rxjs';
-import { PersonService } from './persons/shared/person.service';
+import { Component, OnInit } from '@angular/core';
+import { PersonFacade } from '@ngrx-playground/persons/shared/store';
 
 @Component({
   selector: 'my-app',
@@ -13,7 +10,6 @@ export class AppComponent implements OnInit {
 
   constructor(
     private _pf: PersonFacade,
-    private store: Store<PersonState.IState>
   ) {}
 
   ngOnInit() {

@@ -1,9 +1,9 @@
 <h1>Persons</h1>
-<ng-container *ngFor="let person of (_pf.persons$ | async)">
-	<button (click)="_pf.selectPerson(person.firstName)">
+<ng-container *ngFor="let person of (pf.persons$ | async)">
+	<button (click)="pf.selectPerson(person.id)">
 		<span>{{person.firstName}} {{person.lastName}}</span>
 </button>
 <br>
 </ng-container>
 <hr>
-<app-person *ngIf="selectedPerson$ | async" [selectedPerson]="selectedPerson$ | async"></app-person>
+<app-person *ngIf="pf.selectedPerson$ | async" [selectedPerson]="pf.selectedPerson$ | async"></app-person>

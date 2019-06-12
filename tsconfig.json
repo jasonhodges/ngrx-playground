@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
@@ -8,6 +9,11 @@
     "experimentalDecorators": true,
     "lib": [ "es2015", "dom" ],
     "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true
+    "suppressImplicitAnyIndexErrors": true,
+    "paths": {
+      "@ngrx-playground/*": [
+        "app/*"
+      ]
+    }
   }
 }

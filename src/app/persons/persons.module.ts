@@ -1,12 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PersonsComponent } from './pages/persons/persons.component';
-import { PersonComponent } from './pages/person/person.component';
+import { NgModule } from '@angular/core';
+import { PersonComponent } from '@ngrx-playground/persons/pages/person/person.component';
+import { PersonsComponent } from '@ngrx-playground/persons/pages/persons/persons.component';
+import { PersonsRoutingModule } from '@ngrx-playground/persons/persons-routing.module';
+import { PersonReducer } from '@ngrx-playground/persons/shared/store';
+import { PersonEffects } from '@ngrx-playground/persons/shared/store/person.effects';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { PersonReducer } from './shared/store'
-import { PersonEffects } from './shared/store/person.effects';
-import { PersonsRoutingModule } from './persons-routing.module';
 
 @NgModule({
   imports: [

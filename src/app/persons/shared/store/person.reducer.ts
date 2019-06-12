@@ -1,4 +1,5 @@
-import { PersonState } from './index';
+import { Person } from '@ngrx-playground/persons/shared/store/person.model';
+import { PersonState } from '@ngrx-playground/persons/shared/store/person.state';
 import { PersonActions } from './person.actions';
 
 export namespace PersonReducer {
@@ -8,11 +9,24 @@ export namespace PersonReducer {
   ): PersonState.IState {
     switch (action.type) {
       case PersonActions.personDataLoadedSuccess.type: {
-        return {
-          ...state,
-          persons: action.persons,
-          personDataLoaded: true
-        }
+        const p = action.persons;
+        const persons = p.reduce(
+          (persons: {[id: string]: Person}, person: Person) => {
+            return {
+              ...persons,
+              [person.id]: person,
+            }
+          },
+          {
+            ...state.persons
+          }
+        );
+          return {
+            ...state,
+            ids: action.ids,
+            persons,
+            personDataLoaded: true
+          }
       }
       case PersonActions.selectPerson.type: {
         return {
@@ -39,7 +53,7 @@ export namespace PersonReducer {
           selectedPerson: {
             ...state.selectedPerson,
             activityToDo: null,
-            activitySelected: true
+            activitySelected: false
           }
          
         }
@@ -52,8 +66,6 @@ export namespace PersonReducer {
 
   export function mapPerson(state: PersonState.IState, name: string) {
     console.log(state);
-    return state.persons.find((p) => {
-      return p.firstName === name
-    })
+    return state.persons[name];
   }
 }

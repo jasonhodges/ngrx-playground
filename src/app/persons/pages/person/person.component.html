@@ -1,20 +1,21 @@
 <div>
-	<span (click)="pf.clearActivity()"><strong>{{selectedPerson.firstName}} {{selectedPerson.lastName}}</strong></span>
+  <span (click)="pf.clearActivity()"><strong>{{selectedPerson.firstName}} {{selectedPerson.lastName}}</strong></span>
   <ul>
-    <ng-container *ngFor="let popular of selectedPerson.popularActivities">
+    <ng-container *ngFor="let activity of selectedPerson.popularActivities">
       <li>
-        <button (click)="pf.selectActivity(popular.activity)">{{popular.activity}}</button>
+        <button (click)="pf.selectActivity(activity)">{{activity}}</button>
       </li>
     </ng-container>
   </ul>
   <ul>
-  <ng-container *ngFor="let friend of (pf.activitySelected$ | async) ? (pf.friendsSameActivities$ | async) : selectedPerson.friends">
-    <li>{{friend.name}}</li>
-    <ul>
-    <ng-container *ngFor="let popular of friend.popularActivities">
-      <li>{{popular.activity}}</li>
+    <ng-container
+        *ngFor="let friend of (pf.activitySelected$ | async) ? (pf.friendsSameActivities$ | async) : selectedPerson.friends">
+      <li>{{friend}}</li>
+      <ul>
+        <ng-container *ngFor="let activity of friend.popularActivities">
+          <li>{{activity}}</li>
+        </ng-container>
+      </ul>
     </ng-container>
-  </ul>
-  </ng-container>
   </ul>
 </div>

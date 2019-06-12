@@ -1,22 +1,28 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from '@ngrx-playground/app-routing.module';
+import { AppComponent } from '@ngrx-playground/app.component';
+import { EventsModule } from '@ngrx-playground/events/events.module';
+import { PersonsModule } from '@ngrx-playground/persons/persons.module';
+import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { AppComponent } from './app.component';
-import { PersonsModule } from './persons/persons.module';
-import { PersonReducer } from './persons/shared/store';
-import { EffectsModule } from '@ngrx/effects';
-import { AppRoutingModule } from './app-routing.module';
-import { EventsModule } from './events/events.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({}, {
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+        strictStateSerializability: true,
+        strictActionSerializability: true,
+      },
+    }),
     StoreDevtoolsModule.instrument({
       name: 'NgRx Playground',
       maxAge: 25,
@@ -30,4 +36,3 @@ import { EventsModule } from './events/events.module';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-// StoreModule.forRoot({ persons: PersonReducer.reducer }),

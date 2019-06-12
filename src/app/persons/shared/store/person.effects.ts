@@ -15,14 +15,14 @@ export class PersonEffects {
       .loadPersonData()
       .pipe(
         map((response) => this.dataMapper.buildPerson(response)),
-        map((persons) => PersonActions.personDataLoadedSuccess({persons: persons}))
+        map((data) => PersonActions.personDataLoadedSuccess({ids: data.ids, persons: data.persons}))
       )
     )
   );
 
   @Effect({ dispatch: false })
   personClick$ = fromEvent(document, 'click').pipe(
-    map(() => {console.log('clicked')}))
+    map(() => {console.log('clicked')}));
 
   constructor(
     private actions$: Actions,

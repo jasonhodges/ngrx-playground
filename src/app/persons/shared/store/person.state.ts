@@ -1,15 +1,18 @@
-import { PersonModel } from './person.model';
+import { Person } from '@ngrx-playground/persons/shared/store/person.model';
 
-// export namespace PersonState {
+export namespace PersonState {
+
   export interface IState {
-    persons: PersonModel.Person[];
-    selectedPerson: PersonModel.Person;
+    ids: string[];
+    persons: { [id: string]: Person };
+    selectedPerson: Person;
     personDataLoaded: boolean;
   }
 
   export const initialState: IState = {
-    persons: [],
-    selectedPerson: null,
+    ids: [],
+    persons: undefined,
+    selectedPerson: undefined,
     personDataLoaded: false,
   }
-// }
+}

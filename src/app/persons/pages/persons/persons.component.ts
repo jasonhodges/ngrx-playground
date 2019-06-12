@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-
-import { Person, PersonFacade } from '../../shared/store';
+import { Component, Input, OnInit } from '@angular/core';
+import { Person, PersonFacade } from '@ngrx-playground/persons/shared/store';
 
 @Component({
   selector: 'app-persons',
@@ -9,9 +8,9 @@ import { Person, PersonFacade } from '../../shared/store';
 })
 export class PersonsComponent implements OnInit {
   @Input() persons: Person[];
-  selectedPerson$ = this._pf.selectedPerson$;
 
-  constructor(private _pf: PersonFacade) { }
+  constructor(public pf: PersonFacade) {
+  }
 
   ngOnInit() {
 
