@@ -4,7 +4,7 @@ import { Person, PersonFacade } from '@ngrx-playground/persons/shared/store';
 @Component({
   selector: 'app-persons',
   templateUrl: './persons.component.html',
-  styleUrls: ['./persons.component.css']
+  styleUrls: ['./persons.component.scss']
 })
 export class PersonsComponent implements OnInit {
   @Input() persons: Person[];

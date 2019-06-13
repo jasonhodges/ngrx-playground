@@ -8,8 +8,7 @@
     </ng-container>
   </ul>
   <ul>
-    <ng-container
-        *ngFor="let friend of (pf.activitySelected$ | async) ? (pf.friendsSameActivities$ | async) : selectedPerson.friends">
+    <ng-container *ngFor="let friend of (pf.activitySelected$ | async) ? (pf.friendsSameActivities$ | async) : selectedPerson.friends">
       <li>{{friend}}</li>
       <ul>
         <ng-container *ngFor="let activity of friend.popularActivities">

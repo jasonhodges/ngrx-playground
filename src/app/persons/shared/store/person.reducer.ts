@@ -1,17 +1,16 @@
 import { Person } from '@ngrx-playground/persons/shared/store/person.model';
 import { PersonState } from '@ngrx-playground/persons/shared/store/person.state';
+import { createReducer, on } from '@ngrx/store';
 import { PersonActions } from './person.actions';
 
+
 export namespace PersonReducer {
-  export function reducer(
-    state: PersonState.IState = PersonState.initialState,
-    action: PersonActions.PersonActionsUnion
-  ): PersonState.IState {
-    switch (action.type) {
-      case PersonActions.personDataLoadedSuccess.type: {
-        const p = action.persons;
-        const persons = p.reduce(
-          (persons: {[id: string]: Person}, person: Person) => {
+  const personReducer = createReducer(
+    PersonState.initialState,
+    on(PersonActions.personDataLoadedSuccess, (state, { persons, ids }) => {
+        const p = persons;
+        let people = p.reduce(
+          (persons: { [id: string]: Person }, person: Person) => {
             return {
               ...persons,
               [person.id]: person,
@@ -21,47 +20,45 @@ export namespace PersonReducer {
             ...state.persons
           }
         );
-          return {
-            ...state,
-            ids: action.ids,
-            persons,
-            personDataLoaded: true
-          }
-      }
-      case PersonActions.selectPerson.type: {
         return {
           ...state,
-          selectedPerson: mapPerson(state, action.name)
+          ids: ids,
+          persons: people,
+          personDataLoaded: true
         }
       }
+    ),
+    on(PersonActions.selectPerson, (state, { name }) => {
+      return {
+        ...state,
+        selectedPerson: mapPerson(state, name)
+      }
+    }),
+    on(PersonActions.selectActivity, (state, {activity}) => {
+      return {
+        ...state,
+        selectedPerson: {
+          ...state.selectedPerson,
+          activityToDo: activity,
+          activitySelected: true
+        }
 
-      case PersonActions.selectActivity.type: {
-        return {
-          ...state,
-          selectedPerson: {
-            ...state.selectedPerson,
-            activityToDo: action.activity,
-            activitySelected: true
-          }
-         
+      }
+    }),
+    on(PersonActions.clearActivity, (state) => {
+      return {
+        ...state,
+        selectedPerson: {
+          ...state.selectedPerson,
+          activityToDo: null,
+          activitySelected: false
         }
       }
+    })
+  );
 
-      case PersonActions.clearActivity.type: {
-        return {
-          ...state,
-          selectedPerson: {
-            ...state.selectedPerson,
-            activityToDo: null,
-            activitySelected: false
-          }
-         
-        }
-      }
-      default: {
-        return state;
-      }
-    }
+  export function reducer(state: PersonState.IState | undefined, action: PersonActions.PersonActionsUnion) {
+    return personReducer(state, action);
   }
 
   export function mapPerson(state: PersonState.IState, name: string) {

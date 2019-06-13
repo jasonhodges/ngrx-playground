@@ -1,6 +1,6 @@
 <h1>Persons</h1>
 <ng-container *ngFor="let person of (pf.persons$ | async)">
-	<button (click)="pf.selectPerson(person.id)">
+	<button (click)="pf.selectPerson(person.id)" [ngClass]="person.friends.length > 0 ? 'person-btn_f' : 'person-btn_nf'">
 		<span>{{person.firstName}} {{person.lastName}}</span>
 </button>
 <br>
