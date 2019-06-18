@@ -7,7 +7,7 @@ import { Person, PersonFacade } from '@ngrx-playground/persons/shared/store';
   styleUrls: ['./persons.component.scss']
 })
 export class PersonsComponent implements OnInit {
-  @Input() persons: Person[];
+  @Input() persons?: Person[];
 
   constructor(public pf: PersonFacade) {
   }

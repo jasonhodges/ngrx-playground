@@ -1,19 +1,31 @@
 {
   "compilerOptions": {
+    "strict": false,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "outDir": "./dist/out-tsc",
     "baseUrl": "src",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
     "target": "es5",
     "module": "commonjs",
-    "moduleResolution": "node",
-    "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": [ "es2015", "dom" ],
-    "noImplicitAny": true,
+    "lib": [
+      "es2016",
+      "dom"
+    ],
     "suppressImplicitAnyIndexErrors": true,
     "paths": {
       "@ngrx-playground/*": [
         "app/*"
       ]
     }
-  }
+  },
+  "files": [
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

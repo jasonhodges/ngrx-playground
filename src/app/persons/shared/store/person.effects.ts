@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
+import { fromEvent } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
-import { EMPTY, fromEvent } from 'rxjs';
+import { PersonDataMapper } from '../person.dto';
 import { PersonService } from '../person.service';
-import { PersonActions} from './person.actions';
-import { PersonDataMapper} from '../person.data-mapper';
+import { PersonActions } from './person.actions';
 
 @Injectable()
 export class PersonEffects {
