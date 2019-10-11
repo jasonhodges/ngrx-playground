@@ -1,9 +1,21 @@
 <h1>Persons</h1>
 <ng-container *ngFor="let person of (pf.persons$ | async)">
-	<button (click)="pf.selectPerson(person.id)" [ngClass]="person.friends.length > 0 ? 'person-btn_f' : 'person-btn_nf'">
-		<span>{{person.firstName}} {{person.lastName}}</span>
-</button>
-<br>
+  <mat-card *ngIf="person.friends.length > 0" class="person-card">
+    <mat-card-header>
+      <img alt="" mat-card-avatar src="{{person.avatar}}">
+      <mat-card-title>{{person.firstName}} {{person.lastName}}</mat-card-title>
+      <!--			<mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
+    </mat-card-header>
+    <ng-container *ngIf="pf.selectedPerson$ | async">
+      <mat-card-content *ngIf="(pf.selectedPersonId$ | async) === person.id">
+        <app-person *ngIf="pf.selectedPerson$ | async" [selectedPerson]="pf.selectedPerson$ | async"></app-person>
+      </mat-card-content>
+    </ng-container>
+    <mat-card-actions>
+      <button (click)="pf.selectPerson(person.id)" mat-button>SELECT</button>
+    </mat-card-actions>
+  </mat-card>
+  <br>
 </ng-container>
 <hr>
-<app-person *ngIf="pf.selectedPerson$ | async" [selectedPerson]="pf.selectedPerson$ | async"></app-person>
+

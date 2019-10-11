@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { MaterialModule } from '@ngrx-playground/core/material.module';
 import { PersonComponent } from '@ngrx-playground/persons/pages/person/person.component';
 import { PersonsComponent } from '@ngrx-playground/persons/pages/persons/persons.component';
 import { PersonsRoutingModule } from '@ngrx-playground/persons/persons-routing.module';
@@ -13,7 +14,8 @@ import { StoreModule } from '@ngrx/store';
     CommonModule,
     StoreModule.forFeature('personState', PersonReducer.reducer),
     EffectsModule.forFeature([PersonEffects]),
-    PersonsRoutingModule
+    PersonsRoutingModule,
+    MaterialModule
   ],
   declarations: [PersonsComponent, PersonComponent],
   exports: [PersonComponent]

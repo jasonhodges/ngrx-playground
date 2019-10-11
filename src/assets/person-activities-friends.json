@@ -3,6 +3,7 @@
     "_id": "5afd9469b37ba69fac851039",
     "index": 0,
     "age": 25,
+    "avatar": "assets/images/Todd_happy_smile.png",
     "name": {
       "first": "Todd",
       "last": "Blake"
@@ -58,6 +59,7 @@
     "_id": "5afd94695d44ce9b7ca699d5",
     "index": 1,
     "age": 28,
+    "avatar": "assets/images/Celeste_default_smile.png",
     "name": {
       "first": "Celeste",
       "last": "Bailey"
@@ -113,6 +115,7 @@
     "_id": "5afd94698fe0c868d3f20398",
     "index": 2,
     "age": 27,
+    "avatar": "assets/images/Sanchez_side_twinkle.png",
     "name": {
       "first": "Sanchez",
       "last": "Craft"
@@ -168,6 +171,7 @@
     "_id": "5afd94690dab140389df7e93",
     "index": 3,
     "age": 39,
+    "avatar": "assets/images/Angel_happy_smile.png",
     "name": {
       "first": "Angel",
       "last": "Stevens"
@@ -223,6 +227,7 @@
     "_id": "5afd946970b507756bdde49f",
     "index": 4,
     "age": 34,
+    "avatar": "assets/images/Key_happy_twinkle.png",
     "name": {
       "first": "Key",
       "last": "Garza"
@@ -278,6 +283,7 @@
     "_id": "5afd946936b97132900ae646",
     "index": 5,
     "age": 25,
+    "avatar": "assets/images/Rosanna_squint_default.png",
     "name": {
       "first": "Rosanna",
       "last": "Blevins"

@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EventsComponent } from './pages/events/events.component';
-import { EventsRoutingModule } from './events-routing.module';
+import { NgModule } from '@angular/core';
+import { EventsComponent } from '@ngrx-playground/events/containers/events/events.component';
+import { EventsRoutingModule } from '@ngrx-playground/events/events-routing.module';
 
 @NgModule({
   imports: [

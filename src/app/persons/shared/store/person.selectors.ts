@@ -22,6 +22,11 @@ export namespace PersonSelectors {
     state => state.selectedPerson
   );
 
+  export const selectedPersonId: MemoizedSelector<PersonState.IState, string> = createSelector(
+    selectedPerson,
+    (sp) => sp.id
+  );
+
   export const activitySelected: MemoizedSelector<PersonState.IState, boolean> = createSelector(
     selectedPerson,
     (sp) => sp.activitySelected

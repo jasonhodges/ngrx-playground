@@ -1,20 +1,21 @@
-<div>
-  <span (click)="pf.clearActivity()"><strong>{{selectedPerson.firstName}} {{selectedPerson.lastName}}</strong></span>
-  <ul>
-    <ng-container *ngFor="let activity of selectedPerson.popularActivities">
-      <li>
-        <button (click)="pf.selectActivity(activity)">{{activity}}</button>
-      </li>
-    </ng-container>
-  </ul>
-  <ul>
-    <ng-container *ngFor="let friend of (pf.activitySelected$ | async) ? (pf.friendsSameActivities$ | async) : selectedPerson.friends">
-      <li>{{friend}}</li>
-      <ul>
-        <ng-container *ngFor="let activity of friend.popularActivities">
-          <li>{{activity}}</li>
-        </ng-container>
-      </ul>
-    </ng-container>
-  </ul>
+<div class="person-container mat-elevation-z4">
+  <button (click)="pf.clearActivity()" mat-button>clear activity</button>
+  <mat-list>
+    <mat-list-item *ngFor="let activity of selectedPerson.popularActivities">
+      <button (click)="pf.selectActivity(activity)" color="accent" mat-stroked-button>
+        {{ activity }}
+      </button>
+    </mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item
+        *ngFor="let friend of (pf.activitySelected$ | async) ? (pf.friendsSameActivities$ | async) : selectedPerson.friends">
+      {{ friend }}
+    </mat-list-item>
+    <!--    <mat-list>-->
+    <!--      <mat-list-item *ngFor="let activity of friend.popularActivities">-->
+    <!--        {{ activity }}-->
+    <!--      </mat-list-item>-->
+    <!--    </mat-list>-->
+  </mat-list>
 </div>

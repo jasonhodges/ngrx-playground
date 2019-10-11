@@ -10,6 +10,7 @@ export class PersonsComponent implements OnInit {
   @Input() persons?: Person[];
 
   constructor(public pf: PersonFacade) {
+    console.log('personDataLoaded: ', pf.personDataLoaded$)
   }
 
   ngOnInit() {

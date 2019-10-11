@@ -5,7 +5,8 @@ export interface Friend {
 export interface Person {
   id: string;
   firstName: string;
-  lastName: string
+  lastName: string;
+  avatar: string;
   popularActivities: string[];
   friends: Friend[] | Person[]; // Because of ternary check in persons.component.html:12
   activityToDo: string;

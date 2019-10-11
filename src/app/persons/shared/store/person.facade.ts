@@ -14,8 +14,14 @@ export class PersonFacade {
   }
 
   selectedPerson$: Observable<Person> = this.store.pipe(select(PersonSelectors.selectedPerson));
+  selectedPersonId$: Observable<string> = this.store.pipe(select(PersonSelectors.selectedPersonId));
 
-  personDataLoaded$ = this.store.pipe(select(PersonSelectors.personDataLoaded));
+  personDataLoaded$ = this.store.select(
+    PersonSelectors.personDataLoaded
+  ).subscribe((result) => {
+    console.log(`result ${result}`);
+    return result
+  });
 
   persons$: Observable<Person[]> = this.store.pipe(select(PersonSelectors.getPersons));
 
