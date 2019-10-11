@@ -1,0 +1,283 @@
+{
+  personState: {
+    persons: [
+      {
+        firstName: 'Todd',
+        lastName: 'Blake',
+        friends: [
+          {
+            name: 'Hammond Weber',
+            popularActivities: [
+              {
+                activity: 'offroading'
+              },
+              {
+                activity: 'biking'
+              },
+              {
+                activity: 'hiking'
+              }
+            ]
+          },
+          {
+            name: 'Jo Cotton',
+            popularActivities: []
+          },
+          {
+            name: 'Tina Wise',
+            popularActivities: [
+              {
+                activity: 'biking'
+              },
+              {
+                activity: 'snowboarding'
+              },
+              {
+                activity: 'hiking'
+              }
+            ]
+          }
+        ],
+        popularActivities: [
+          {
+            activity: 'offroading'
+          },
+          {
+            activity: 'snowboarding'
+          },
+          {
+            activity: 'hiking'
+          }
+        ]
+      },
+      {
+        firstName: 'Celeste',
+        lastName: 'Bailey',
+        friends: [
+          {
+            name: 'Stewart Henry',
+            popularActivities: [
+              {
+                activity: 'offroading'
+              },
+              {
+                activity: 'hiking'
+              }
+            ]
+          },
+          {
+            name: 'Warren Harding',
+            popularActivities: [
+              {
+                activity: 'offroading'
+              }
+            ]
+          },
+          {
+            name: 'Margaret Sexton',
+            popularActivities: [
+              {
+                activity: 'snowboarding'
+              }
+            ]
+          }
+        ],
+        popularActivities: [
+          {
+            activity: 'biking'
+          },
+          {
+            activity: 'snowboarding'
+          },
+          {
+            activity: 'hiking'
+          }
+        ]
+      },
+      {
+        firstName: 'Sanchez',
+        lastName: 'Craft',
+        friends: [
+          {
+            name: 'Augusta Roberson',
+            popularActivities: [
+              {
+                activity: 'biking'
+              },
+              {
+                activity: 'hiking'
+              }
+            ]
+          },
+          {
+            name: 'Anita Waller',
+            popularActivities: [
+              {
+                activity: 'biking'
+              },
+              {
+                activity: 'snowboarding'
+              }
+            ]
+          },
+          {
+            name: 'Jacobs Rich',
+            popularActivities: [
+              {
+                activity: 'snowboarding'
+              }
+            ]
+          }
+        ],
+        popularActivities: [
+          {
+            activity: 'offroading'
+          },
+          {
+            activity: 'hiking'
+          }
+        ]
+      },
+      {
+        firstName: 'Angel',
+        lastName: 'Stevens',
+        friends: [
+          {
+            name: 'Kristen Bishop',
+            popularActivities: [
+              {
+                activity: 'biking'
+              },
+              {
+                activity: 'snowboarding'
+              }
+            ]
+          },
+          {
+            name: 'Boyle Burnett',
+            popularActivities: [
+              {
+                activity: 'snowboarding'
+              }
+            ]
+          },
+          {
+            name: 'Tracie Landry',
+            popularActivities: [
+              {
+                activity: 'hiking'
+              }
+            ]
+          }
+        ],
+        popularActivities: [
+          {
+            activity: 'offroading'
+          }
+        ]
+      },
+      {
+        firstName: 'Key',
+        lastName: 'Garza',
+        friends: [
+          {
+            name: 'Klein Greer',
+            popularActivities: [
+              {
+                activity: 'snowboarding'
+              }
+            ]
+          },
+          {
+            name: 'Vivian Stevenson',
+            popularActivities: [
+              {
+                activity: 'hiking'
+              }
+            ]
+          },
+          {
+            name: 'Baker Mcknight',
+            popularActivities: [
+              {
+                activity: 'offroading'
+              },
+              {
+                activity: 'biking'
+              }
+            ]
+          }
+        ],
+        popularActivities: [
+          {
+            activity: 'snowboarding'
+          },
+          {
+            activity: 'hiking'
+          }
+        ]
+      },
+      {
+        firstName: 'Rosanna',
+        lastName: 'Blevins',
+        friends: [
+          {
+            name: 'Myra Gillespie',
+            popularActivities: [
+              {
+                activity: 'offroading'
+              },
+              {
+                activity: 'biking'
+              },
+              {
+                activity: 'snowboarding'
+              }
+            ]
+          },
+          {
+            name: 'Isabel Sullivan',
+            popularActivities: [
+              {
+                activity: 'offroading'
+              },
+              {
+                activity: 'biking'
+              },
+              {
+                activity: 'snowboarding'
+              },
+              {
+                activity: 'hiking'
+              }
+            ]
+          },
+          {
+            name: 'Shelton Green',
+            popularActivities: [
+              {
+                activity: 'biking'
+              },
+              {
+                activity: 'hiking'
+              }
+            ]
+          }
+        ],
+        popularActivities: [
+          {
+            activity: 'biking'
+          },
+          {
+            activity: 'snowboarding'
+          },
+          {
+            activity: 'hiking'
+          }
+        ]
+      }
+    ],
+    selectedPerson: null,
+    personDataLoaded: true
+  }
+}

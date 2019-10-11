@@ -1,0 +1,338 @@
+[
+  {
+    "_id": "5afd9469b37ba69fac851039",
+    "index": 0,
+    "age": 25,
+    "avatar": "assets/images/Todd_happy_smile.png",
+    "name": {
+      "first": "Todd",
+      "last": "Blake"
+    },
+    "activities": {
+      "outdoor": {
+        "offroading": true,
+        "biking": false,
+        "snowboarding": true,
+        "hiking": true
+      }
+    },
+    "friends": [
+      {
+        "id": 0,
+        "name": "Hammond Weber",
+        "activities": {
+          "outdoor": {
+            "offroading": true,
+            "biking": true,
+            "snowboarding": false,
+            "hiking": true
+          }
+        }
+      },
+      {
+        "id": 1,
+        "name": "Jo Cotton",
+        "activities": {
+          "outdoor": {
+            "offroading": false,
+            "biking": false,
+            "snowboarding": false,
+            "hiking": false
+          }
+        }
+      },
+      {
+        "id": 2,
+        "name": "Tina Wise",
+        "activities": {
+          "outdoor": {
+            "offroading": false,
+            "biking": true,
+            "snowboarding": true,
+            "hiking": true
+          }
+        }
+      }
+    ]
+  },
+  {
+    "_id": "5afd94695d44ce9b7ca699d5",
+    "index": 1,
+    "age": 28,
+    "avatar": "assets/images/Celeste_default_smile.png",
+    "name": {
+      "first": "Celeste",
+      "last": "Bailey"
+    },
+    "activities": {
+      "outdoor": {
+        "offroading": false,
+        "biking": true,
+        "snowboarding": true,
+        "hiking": true
+      }
+    },
+    "friends": [
+      {
+        "id": 0,
+        "name": "Stewart Henry",
+        "activities": {
+          "outdoor": {
+            "offroading": true,
+            "biking": false,
+            "snowboarding": false,
+            "hiking": true
+          }
+        }
+      },
+      {
+        "id": 1,
+        "name": "Warren Harding",
+        "activities": {
+          "outdoor": {
+            "offroading": true,
+            "biking": false,
+            "snowboarding": false,
+            "hiking": false
+          }
+        }
+      },
+      {
+        "id": 2,
+        "name": "Margaret Sexton",
+        "activities": {
+          "outdoor": {
+            "offroading": false,
+            "biking": false,
+            "snowboarding": true,
+            "hiking": false
+          }
+        }
+      }
+    ]
+  },
+  {
+    "_id": "5afd94698fe0c868d3f20398",
+    "index": 2,
+    "age": 27,
+    "avatar": "assets/images/Sanchez_side_twinkle.png",
+    "name": {
+      "first": "Sanchez",
+      "last": "Craft"
+    },
+    "activities": {
+      "outdoor": {
+        "offroading": true,
+        "biking": false,
+        "snowboarding": false,
+        "hiking": true
+      }
+    },
+    "friends": [
+      {
+        "id": 0,
+        "name": "Augusta Roberson",
+        "activities": {
+          "outdoor": {
+            "offroading": false,
+            "biking": true,
+            "snowboarding": false,
+            "hiking": true
+          }
+        }
+      },
+      {
+        "id": 1,
+        "name": "Anita Waller",
+        "activities": {
+          "outdoor": {
+            "offroading": false,
+            "biking": true,
+            "snowboarding": true,
+            "hiking": false
+          }
+        }
+      },
+      {
+        "id": 2,
+        "name": "Jacobs Rich",
+        "activities": {
+          "outdoor": {
+            "offroading": false,
+            "biking": false,
+            "snowboarding": true,
+            "hiking": false
+          }
+        }
+      }
+    ]
+  },
+  {
+    "_id": "5afd94690dab140389df7e93",
+    "index": 3,
+    "age": 39,
+    "avatar": "assets/images/Angel_happy_smile.png",
+    "name": {
+      "first": "Angel",
+      "last": "Stevens"
+    },
+    "activities": {
+      "outdoor": {
+        "offroading": true,
+        "biking": false,
+        "snowboarding": false,
+        "hiking": false
+      }
+    },
+    "friends": [
+      {
+        "id": 0,
+        "name": "Kristen Bishop",
+        "activities": {
+          "outdoor": {
+            "offroading": false,
+            "biking": true,
+            "snowboarding": true,
+            "hiking": false
+          }
+        }
+      },
+      {
+        "id": 1,
+        "name": "Boyle Burnett",
+        "activities": {
+          "outdoor": {
+            "offroading": false,
+            "biking": false,
+            "snowboarding": true,
+            "hiking": false
+          }
+        }
+      },
+      {
+        "id": 2,
+        "name": "Tracie Landry",
+        "activities": {
+          "outdoor": {
+            "offroading": false,
+            "biking": false,
+            "snowboarding": false,
+            "hiking": true
+          }
+        }
+      }
+    ]
+  },
+  {
+    "_id": "5afd946970b507756bdde49f",
+    "index": 4,
+    "age": 34,
+    "avatar": "assets/images/Key_happy_twinkle.png",
+    "name": {
+      "first": "Key",
+      "last": "Garza"
+    },
+    "activities": {
+      "outdoor": {
+        "offroading": false,
+        "biking": false,
+        "snowboarding": true,
+        "hiking": true
+      }
+    },
+    "friends": [
+      {
+        "id": 0,
+        "name": "Klein Greer",
+        "activities": {
+          "outdoor": {
+            "offroading": false,
+            "biking": false,
+            "snowboarding": true,
+            "hiking": false
+          }
+        }
+      },
+      {
+        "id": 1,
+        "name": "Vivian Stevenson",
+        "activities": {
+          "outdoor": {
+            "offroading": false,
+            "biking": false,
+            "snowboarding": false,
+            "hiking": true
+          }
+        }
+      },
+      {
+        "id": 2,
+        "name": "Baker Mcknight",
+        "activities": {
+          "outdoor": {
+            "offroading": true,
+            "biking": true,
+            "snowboarding": false,
+            "hiking": false
+          }
+        }
+      }
+    ]
+  },
+  {
+    "_id": "5afd946936b97132900ae646",
+    "index": 5,
+    "age": 25,
+    "avatar": "assets/images/Rosanna_squint_default.png",
+    "name": {
+      "first": "Rosanna",
+      "last": "Blevins"
+    },
+    "activities": {
+      "outdoor": {
+        "offroading": false,
+        "biking": true,
+        "snowboarding": true,
+        "hiking": true
+      }
+    },
+    "friends": [
+      {
+        "id": 0,
+        "name": "Myra Gillespie",
+        "activities": {
+          "outdoor": {
+            "offroading": true,
+            "biking": true,
+            "snowboarding": true,
+            "hiking": false
+          }
+        }
+      },
+      {
+        "id": 1,
+        "name": "Isabel Sullivan",
+        "activities": {
+          "outdoor": {
+            "offroading": true,
+            "biking": true,
+            "snowboarding": true,
+            "hiking": true
+          }
+        }
+      },
+      {
+        "id": 2,
+        "name": "Shelton Green",
+        "activities": {
+          "outdoor": {
+            "offroading": false,
+            "biking": true,
+            "snowboarding": false,
+            "hiking": true
+          }
+        }
+      }
+    ]
+  }
+]
